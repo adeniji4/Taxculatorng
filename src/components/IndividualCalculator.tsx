@@ -303,22 +303,22 @@ const IndividualCalculator = ({
 
       {/* Results */}
       {result && <Tabs defaultValue="tax-due" className="w-full">
-          <TabsList className="grid w-full grid-cols-3">
-            <TabsTrigger value="tax-due">Total Tax Due</TabsTrigger>
-            <TabsTrigger value="payslip">Payslip Breakdown</TabsTrigger>
-            <TabsTrigger value="explanation">Explanation</TabsTrigger>
+          <TabsList className="grid w-full grid-cols-3 gap-1 p-1">
+            <TabsTrigger value="tax-due" className="text-xs sm:text-sm px-2 sm:px-3 py-2">Total Tax Due</TabsTrigger>
+            <TabsTrigger value="payslip" className="text-xs sm:text-sm px-2 sm:px-3 py-2">Payslip Breakdown</TabsTrigger>
+            <TabsTrigger value="explanation" className="text-xs sm:text-sm px-2 sm:px-3 py-2">Explanation</TabsTrigger>
           </TabsList>
 
           {/* Tab 1: Total Tax Due */}
-          <TabsContent value="tax-due" className="space-y-6">
-            <div className="bg-gradient-to-br from-red-50 to-red-100 dark:from-red-950 dark:to-red-900 p-8 rounded-lg border-2 border-red-200 dark:border-red-800">
-              <h4 className="text-lg font-semibold text-foreground mb-6 text-center">Your Tax Obligation</h4>
+          <TabsContent value="tax-due" className="space-y-6 mt-4">
+            <div className="bg-gradient-to-br from-red-50 to-red-100 dark:from-red-950 dark:to-red-900 p-4 sm:p-6 md:p-8 rounded-lg border-2 border-red-200 dark:border-red-800">
+              <h4 className="text-base sm:text-lg font-semibold text-foreground mb-4 sm:mb-6 text-center">Your Tax Obligation</h4>
               
-              <div className="space-y-6">
+              <div className="space-y-4 sm:space-y-6">
                 {/* Annual Tax */}
                 <div className="text-center pb-6 border-b border-red-300 dark:border-red-700">
                   <p className="text-sm text-muted-foreground mb-2">Annual Tax</p>
-                  <p className="text-5xl font-bold text-red-600 dark:text-red-400">
+                  <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-red-600 dark:text-red-400 break-words">
                     {formatCurrency(result.annualTax)}
                   </p>
                 </div>
@@ -326,7 +326,7 @@ const IndividualCalculator = ({
                 {/* Monthly Tax */}
                 <div className="text-center pb-6 border-b border-red-300 dark:border-red-700">
                   <p className="text-sm text-muted-foreground mb-2">Monthly Tax</p>
-                  <p className="text-4xl font-bold text-red-600 dark:text-red-400">
+                  <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-red-600 dark:text-red-400 break-words">
                     {formatCurrency(result.annualTax / 12)}
                   </p>
                 </div>
@@ -334,7 +334,7 @@ const IndividualCalculator = ({
                 {/* Net Pay - The Good News */}
                 <div className="text-center pt-2">
                   <p className="text-sm text-muted-foreground mb-2">Your Monthly Net Pay (Credit Alert)</p>
-                  <p className="text-4xl font-bold text-green-600 dark:text-green-400">
+                  <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-green-600 dark:text-green-400 break-words">
                     {formatCurrency(result.netPay / 12)}
                   </p>
                 </div>
