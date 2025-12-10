@@ -181,16 +181,16 @@ export function DashboardLayout({ children, title, calculationData, activeTab = 
                 </div>
               </div>
             </div>
+
+            {/* Footer */}
+            <footer className="mt-8 pt-6 border-t border-border bg-white py-2 sm:py-3 md:py-4 px-3 sm:px-4 md:px-6 lg:px-8">
+              <div className="text-center text-muted-foreground text-xs sm:text-sm">
+                <p className="leading-tight">© 2026 Taxculator. Calculations based on Nigeria Tax Act 2025.</p>
+                <p className="mt-1 leading-tight">For informational purposes only. Consult a tax professional for specific advice.</p>
+              </div>
+            </footer>
           </div>
         </main>
-
-        {/* Footer */}
-        <footer className="border-t border-border bg-white py-4 md:py-6 px-4 md:px-6 lg:px-8">
-          <div className="text-center text-muted-foreground text-sm">
-            <p>© 2026 Taxculator. Calculations based on Nigeria Tax Act 2025.</p>
-            <p className="mt-1">For informational purposes only. Consult a tax professional for specific advice.</p>
-          </div>
-        </footer>
       </div>
 
       <HowToPayModal 
