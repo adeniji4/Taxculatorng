@@ -23,8 +23,8 @@ const PersonalTax = () => {
           </p>
         </div>
 
-        {/* In-article ad placed between explanation sections */}
-        <InArticleAd slot="IN_ARTICLE_SLOT_1" />
+        {/* In-article ad placed between explanation sections (hidden on small screens) */}
+        <InArticleAd slot="IN_ARTICLE_SLOT_1" className="hidden sm:block" />
 
         <div className="prose max-w-none">
           <h4>Common examples</h4>

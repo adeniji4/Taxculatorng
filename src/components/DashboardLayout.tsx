@@ -95,8 +95,8 @@ export function DashboardLayout({ children, title, calculationData, activeTab = 
         {/* Main Content Area */}
         <main className="flex-1 overflow-y-auto">
           <div className="p-4 md:p-6 lg:p-8">
-            {/* Top Banner Ad - Mobile Only */}
-            <div className="mb-6 lg:hidden">
+            {/* Top Banner Ad - show on medium+ only to avoid large mobile layout shift */}
+            <div className="mb-6 hidden md:block">
               <p className="text-xs text-muted-foreground mb-2 font-semibold">SPONSORED</p>
               <AdSenseAd slot="1234567890" format="horizontal" />
             </div>
@@ -125,8 +125,8 @@ export function DashboardLayout({ children, title, calculationData, activeTab = 
               </div>
             </div>
 
-            {/* Ad directly below page title (consistent across pages) */}
-            <div className="mb-6">
+            {/* Ad directly below page title (hidden on small screens to reduce layout shift) */}
+            <div className="mb-6 hidden md:block">
               <p className="text-xs text-muted-foreground mb-2 font-semibold">SPONSORED</p>
               <AdSenseAd slot="TITLE_SLOT_1" format="horizontal" />
             </div>
@@ -143,8 +143,8 @@ export function DashboardLayout({ children, title, calculationData, activeTab = 
               </div>
             )}
 
-            {/* Bottom Banner Ad */}
-            <div className="mt-8 pt-6 border-t border-border">
+            {/* Bottom Banner Ad (hidden on small screens) */}
+            <div className="mt-8 pt-6 border-t border-border hidden md:block">
               <p className="text-xs text-muted-foreground mb-2 font-semibold">SPONSORED</p>
               <AdSenseAd slot="0987654321" format="horizontal" />
             </div>
