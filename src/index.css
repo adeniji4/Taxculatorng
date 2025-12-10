@@ -91,3 +91,35 @@ All colors MUST be HSL.
     @apply bg-background text-foreground;
   }
 }
+
+/* Responsive ad styles: limit ad height on small screens to prevent layout shift */
+.ad-container,
+.in-article-ad {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 640px) {
+  .ad-container,
+  .in-article-ad {
+    max-height: 120px; /* keep ads from pushing content too far down on mobile */
+    overflow: hidden;
+    padding: 0.25rem 0;
+  }
+
+  /* Ensure the ins injected by AdSense doesn't force taller height */
+  .ad-container .adsbygoogle,
+  .in-article-ad .adsbygoogle {
+    max-height: 120px !important;
+    height: auto !important;
+  }
+}
+
+@media (min-width: 641px) {
+  .ad-container,
+  .in-article-ad {
+    max-height: none;
+    overflow: visible;
+  }
+}
