@@ -23,8 +23,17 @@ const PersonalTax = () => {
           </p>
         </div>
 
-        {/* In-article ad placed between explanation sections (hidden on small screens) */}
-        <InArticleAd slot="IN_ARTICLE_SLOT_1" className="hidden sm:block" />
+        {/* In-article ad: show real ad on sm+; compact placeholder on smaller screens */}
+        <div>
+          <div className="hidden sm:block">
+            <InArticleAd slot="IN_ARTICLE_SLOT_1" />
+          </div>
+          <div className="sm:hidden">
+            <div className="w-full bg-muted rounded-md flex items-center justify-center py-3 px-4">
+              <span className="text-xs text-muted-foreground">Sponsored</span>
+            </div>
+          </div>
+        </div>
 
         <div className="prose max-w-none">
           <h4>Common examples</h4>

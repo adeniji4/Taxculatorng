@@ -96,9 +96,21 @@ export function DashboardLayout({ children, title, calculationData, activeTab = 
         <main className="flex-1 overflow-y-auto">
           <div className="p-4 md:p-6 lg:p-8">
             {/* Top Banner Ad - show on medium+ only to avoid large mobile layout shift */}
-            <div className="mb-6 hidden md:block">
-              <p className="text-xs text-muted-foreground mb-2 font-semibold">SPONSORED</p>
-              <AdSenseAd slot="1234567890" format="horizontal" />
+            <div className="mb-6">
+              <div className="hidden md:block">
+                <p className="text-xs text-muted-foreground mb-2 font-semibold">SPONSORED</p>
+                <AdSenseAd slot="1234567890" format="horizontal" />
+              </div>
+              <div className="md:hidden">
+                {/* compact placeholder on mobile */}
+                <p className="sr-only">Sponsored</p>
+                <div className="w-full">
+                  {/* lazy import placeholder to avoid loading ads on mobile */}
+                  <div className="w-full bg-muted rounded-md flex items-center justify-center py-3 px-4">
+                    <span className="text-xs text-muted-foreground">Sponsored</span>
+                  </div>
+                </div>
+              </div>
             </div>
 
             {/* Page Header */}
@@ -126,9 +138,16 @@ export function DashboardLayout({ children, title, calculationData, activeTab = 
             </div>
 
             {/* Ad directly below page title (hidden on small screens to reduce layout shift) */}
-            <div className="mb-6 hidden md:block">
-              <p className="text-xs text-muted-foreground mb-2 font-semibold">SPONSORED</p>
-              <AdSenseAd slot="TITLE_SLOT_1" format="horizontal" />
+            <div className="mb-6">
+              <div className="hidden md:block">
+                <p className="text-xs text-muted-foreground mb-2 font-semibold">SPONSORED</p>
+                <AdSenseAd slot="TITLE_SLOT_1" format="horizontal" />
+              </div>
+              <div className="md:hidden">
+                <div className="w-full bg-muted rounded-md flex items-center justify-center py-3 px-4">
+                  <span className="text-xs text-muted-foreground">Sponsored</span>
+                </div>
+              </div>
             </div>
 
             {/* Page Content */}
@@ -139,14 +158,28 @@ export function DashboardLayout({ children, title, calculationData, activeTab = 
             {/* Ad shown directly below calculator results when data exists (PersonalTax) */}
             {calculationData && activeTab === "individual" && (
               <div className="mt-6">
-                <AdSenseAd slot="RESULTS_SLOT_1" format="horizontal" />
+                <div className="hidden md:block">
+                  <AdSenseAd slot="RESULTS_SLOT_1" format="horizontal" />
+                </div>
+                <div className="md:hidden">
+                  <div className="w-full bg-muted rounded-md flex items-center justify-center py-3 px-4">
+                    <span className="text-xs text-muted-foreground">Sponsored</span>
+                  </div>
+                </div>
               </div>
             )}
 
             {/* Bottom Banner Ad (hidden on small screens) */}
-            <div className="mt-8 pt-6 border-t border-border hidden md:block">
-              <p className="text-xs text-muted-foreground mb-2 font-semibold">SPONSORED</p>
-              <AdSenseAd slot="0987654321" format="horizontal" />
+            <div className="mt-8 pt-6 border-t border-border">
+              <div className="hidden md:block">
+                <p className="text-xs text-muted-foreground mb-2 font-semibold">SPONSORED</p>
+                <AdSenseAd slot="0987654321" format="horizontal" />
+              </div>
+              <div className="md:hidden">
+                <div className="w-full bg-muted rounded-md flex items-center justify-center py-3 px-4">
+                  <span className="text-xs text-muted-foreground">Sponsored</span>
+                </div>
+              </div>
             </div>
           </div>
         </main>
